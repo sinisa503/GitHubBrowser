@@ -10,12 +10,12 @@ import UIKit
 
 @IBDesignable
 class RoundedButton: UIButton {
-
-   
-   override func layoutSubviews() {
-      super.layoutSubviews()
     
-      self.layer.cornerRadius = self.bounds.height / 3
-      self.layer.masksToBounds = true
-   }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        self.layer.cornerRadius = self.bounds.height / 3
+        self.layer.masksToBounds = true
+    }
 }

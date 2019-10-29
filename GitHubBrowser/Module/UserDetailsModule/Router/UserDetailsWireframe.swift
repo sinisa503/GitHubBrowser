@@ -9,7 +9,7 @@
 import Foundation
 
 protocol UserDetailsWireframe {
-   
-   func goToWeb(url: URL)
-   func sendEmail(to address:String)
+    
+    func goToWeb(url: URL)
+    func sendEmail(to address:String)
 }

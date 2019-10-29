@@ -9,19 +9,19 @@
 import UIKit
 
 class RepositoryRouter: RepositoryWireframe {
-   
-   var view: RepositoryDetailsVC?
-   
-   func goToWeb(url: URL) {
-      if UIApplication.shared.canOpenURL(url) {
-         UIApplication.shared.open(url, options: [:], completionHandler: nil)
-      }
-   }
-   
-   func goToUserDetails(user:User) {
-      if let userDetailsVC = UserDetailsBuilder.assembleModule(with: user) as? UserDetailsVC {
-         view?.navigationController?.navigationBar.topItem?.title = ""
-         view?.navigationController?.show(userDetailsVC, sender: nil)
-      }
-   }
+    
+    var view: RepositoryDetailsVC?
+    
+    func goToWeb(url: URL) {
+        if UIApplication.shared.canOpenURL(url) {
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        }
+    }
+    
+    func goToUserDetails(user:User) {
+        if let userDetailsVC = UserDetailsBuilder.assembleModule(with: user) as? UserDetailsVC {
+            view?.navigationController?.navigationBar.topItem?.title = ""
+            view?.navigationController?.show(userDetailsVC, sender: nil)
+        }
+    }
 }

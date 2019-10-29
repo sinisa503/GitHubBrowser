@@ -12,25 +12,25 @@ import RxSwift
 class SearchInteractor: SearchUseCase {
     
     private let dbService = DatabaseService()
-  
-  func browseGitHub(searchTerm:String,parametars:[String:String]) -> Observable<[Repository]> {
-    return GitHubService.browseGitHub(searchTerm: searchTerm, parametars: parametars)
-  }
-  
-  func downloadUserImage(from url:String, completion:@escaping (UIImage)->()) {
-    DownloadService.getImage(from: url) {downloadOption in
-      switch downloadOption {
-      case .success(let image):
-        completion(image)
-      case .failure(_):
-        completion(#imageLiteral(resourceName: "username_icon"))
-      }
+    
+    func browseGitHub(searchTerm:String,parametars:[String:String]) -> Observable<[Repository]> {
+        return GitHubService.browseGitHub(searchTerm: searchTerm, parametars: parametars)
     }
-  }
-  
-  func downloadUserInfo(username:String) -> Observable<User> {
-    return GitHubService.getGitHubUser(username: username)
-  }
+    
+    func downloadUserImage(from url:String, completion:@escaping (UIImage)->()) {
+        DownloadService.getImage(from: url) {downloadOption in
+            switch downloadOption {
+            case .success(let image):
+                completion(image)
+            case .failure(_):
+                completion(#imageLiteral(resourceName: "username_icon"))
+            }
+        }
+    }
+    
+    func downloadUserInfo(username:String) -> Observable<User> {
+        return GitHubService.getGitHubUser(username: username)
+    }
     
     func refreshData() {
         if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
@@ -46,7 +46,8 @@ class SearchInteractor: SearchUseCase {
                         presenter?.repositories.value = repositories
                     }
                 case .failure(let error):
-                    //showAlert(title: Constant.ERROR, messagge: error.localizedDescription)
+                    let okAction = UIAlertAction(title: Constant.OK, style: .default)
+                    presenter?.showAlert(title: Constant.ERROR, messagge: error.localizedDescription, actions: [okAction])
                     break
                 }
             }
@@ -57,17 +58,17 @@ class SearchInteractor: SearchUseCase {
         if let appDelegate = UIApplication.shared.delegate as? AppDelegate, let name = repository.name {
             let context = appDelegate.persistentContainer.viewContext
             dbService.deleteRepository(with: name, context: context) { result in
+                let okAction = UIAlertAction(title: Constant.OK, style: .default)
                 switch result {
                 case .success():
-                    let okAction = UIAlertAction(title: Constant.OK, style: .default)
-                    //showAlert(title: "Success", messagge: "You have deleted repository from database", actions:[okAction])
+                    presenter?.showAlert(title: "Success", messagge: "You have deleted repository from database", actions:[okAction])
                 case .failure(let error):
-                    //showAlert(title: Constant.ERROR, messagge: error.localizedDescription)
+                    presenter?.showAlert(title: Constant.ERROR, messagge: error.localizedDescription, actions:[okAction])
                     break
                 }
             }
         }
     }
-  
-  weak var presenter: SearchPresentation?
+    
+    weak var presenter: SearchPresentation?
 }

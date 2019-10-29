@@ -34,7 +34,7 @@ class DatabaseTests: XCTestCase {
                 } catch let error {
                     XCTFail(error.localizedDescription)
                 }
-
+                
             }
             return nil
         }()

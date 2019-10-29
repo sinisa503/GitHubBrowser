@@ -9,8 +9,8 @@
 import AlamofireImage
 
 enum Directory {
-   case documents
-   case caches
+    case documents
+    case caches
 }
 
 class CacheService {

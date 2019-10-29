@@ -9,6 +9,6 @@
 import UIKit
 
 protocol SearchViewProtocol: class {
-   func goToUserDetails(user:User)
+    func goToUserDetails(user:User)
     func showAlert(title:String, messagge:String, actions: [UIAlertAction])
 }

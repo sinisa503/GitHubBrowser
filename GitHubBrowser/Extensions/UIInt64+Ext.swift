@@ -11,7 +11,7 @@ import Foundation
 import Foundation
 
 extension UInt64 {
-   func megabytes() -> UInt64 {
-      return self * 1024 * 1024
-   }
+    func megabytes() -> UInt64 {
+        return self * 1024 * 1024
+    }
 }

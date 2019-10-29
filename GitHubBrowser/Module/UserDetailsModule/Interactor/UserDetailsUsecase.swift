@@ -9,6 +9,6 @@
 import UIKit
 
 protocol UserDetailsUsecase: class {
-   
-   func downloadUserImage(from url:String, completion:@escaping (UIImage)->())
+    
+    func downloadUserImage(from url:String, completion:@escaping (UIImage)->())
 }

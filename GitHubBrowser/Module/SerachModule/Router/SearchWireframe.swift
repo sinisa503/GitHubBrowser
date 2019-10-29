@@ -9,7 +9,7 @@
 import Foundation
 
 protocol SearchWireframe: class {
-   
-   func showDetailsFor(repository:Repository, owner:User?)
-   func goToUserDetails(user:User)
+    
+    func showDetailsFor(repository:Repository, owner:User?)
+    func goToUserDetails(user:User)
 }

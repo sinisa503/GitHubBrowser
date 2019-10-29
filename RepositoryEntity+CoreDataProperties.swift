@@ -11,11 +11,11 @@ import CoreData
 
 
 extension RepositoryEntity {
-
+    
     @nonobjc public class func fetchRequest() -> NSFetchRequest<RepositoryEntity> {
         return NSFetchRequest<RepositoryEntity>(entityName: "RepositoryEntity")
     }
-
+    
     @NSManaged public var createdAt: String?
     @NSManaged public var desc: String?
     @NSManaged public var forks: Int32?
@@ -34,5 +34,5 @@ extension RepositoryEntity {
     @NSManaged public var updatedAt: String?
     @NSManaged public var watchersCount: Int32?
     @NSManaged public var owner: OwnerEntity?
-
+    
 }

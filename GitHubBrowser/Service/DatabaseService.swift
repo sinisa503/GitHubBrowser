@@ -14,75 +14,75 @@ class DatabaseService {
     
     func save(repository: Repository, context: NSManagedObjectContext, completion: (Result<Void, Error>)->()) {
         
-            if let repoEntity = NSEntityDescription.entity(forEntityName: "RepositoryEntity", in: context) {
-                
-                let newRepo = RepositoryEntity(entity: repoEntity, insertInto: context)
-                
-                newRepo.createdAt = repository.createdAt
-                newRepo.desc = repository.description
-                if let forks = repository.forks {
-                    newRepo.forks = Int32(forks)
-                }
-                if let forksCount = repository.forksCount {
-                    newRepo.forksCount = Int32(forksCount)
-                }
-                newRepo.gitUrl = repository.gitUrl
-                newRepo.htmlUrl = repository.htmlUrl
-                if let id = repository.id {
-                    newRepo.id = Int32(id)
-                }
-                if let isPrivate = repository.isPrivate {
-                    newRepo.isPrivate = isPrivate
-                }
-                if let issuesCount = repository.issuesCount {
-                    newRepo.issuesCount = Int32(issuesCount)
-                }
-                newRepo.language = repository.language
-                newRepo.name = repository.name
-                if let openIssues = repository.openIssues {
-                    newRepo.openIssues = Int32(openIssues)
-                }
-                if let size = repository.size {
-                    newRepo.size = Int32(size)
-                }
-                newRepo.subscribersUrl = repository.subscribersUrl
-                newRepo.updatedAt = repository.updatedAt
-                if let watchersCount = repository.watchersCount {
-                    newRepo.watchersCount = Int32(watchersCount)
-                }
-                
-                if let owner = repository.owner {
-                    newRepo.owner = save(owner: owner, for: newRepo, context: context)
-                }
-                
-                do {
-                    try context.save()
-                    completion(.success(()))
-                } catch let error {
-                    completion(.failure(error))
-                }
-
+        if let repoEntity = NSEntityDescription.entity(forEntityName: "RepositoryEntity", in: context) {
+            
+            let newRepo = RepositoryEntity(entity: repoEntity, insertInto: context)
+            
+            newRepo.createdAt = repository.createdAt
+            newRepo.desc = repository.description
+            if let forks = repository.forks {
+                newRepo.forks = Int32(forks)
+            }
+            if let forksCount = repository.forksCount {
+                newRepo.forksCount = Int32(forksCount)
+            }
+            newRepo.gitUrl = repository.gitUrl
+            newRepo.htmlUrl = repository.htmlUrl
+            if let id = repository.id {
+                newRepo.id = Int32(id)
+            }
+            if let isPrivate = repository.isPrivate {
+                newRepo.isPrivate = isPrivate
+            }
+            if let issuesCount = repository.issuesCount {
+                newRepo.issuesCount = Int32(issuesCount)
+            }
+            newRepo.language = repository.language
+            newRepo.name = repository.name
+            if let openIssues = repository.openIssues {
+                newRepo.openIssues = Int32(openIssues)
+            }
+            if let size = repository.size {
+                newRepo.size = Int32(size)
+            }
+            newRepo.subscribersUrl = repository.subscribersUrl
+            newRepo.updatedAt = repository.updatedAt
+            if let watchersCount = repository.watchersCount {
+                newRepo.watchersCount = Int32(watchersCount)
+            }
+            
+            if let owner = repository.owner {
+                newRepo.owner = save(owner: owner, for: newRepo, context: context)
+            }
+            
+            do {
+                try context.save()
+                completion(.success(()))
+            } catch let error {
+                completion(.failure(error))
+            }
+            
         }
     }
     
     private func save(owner: Owner, for repository: RepositoryEntity, context: NSManagedObjectContext) -> OwnerEntity? {
         
-            if let ownerEntity = NSEntityDescription.entity(forEntityName: "OwnerEntity", in: context) {
-                let newOwner = OwnerEntity(entity: ownerEntity, insertInto: context)
-                
-                newOwner.avatarUrl = owner.avatarUrl
-                newOwner.followersUrl = owner.followersUrl
-                newOwner.followingUrl = owner.followingUrl
-                newOwner.htmlUrl = owner.htmlUrl
-                if let id = owner.id {
-                    newOwner.id = Int32(id)
-                }
-                newOwner.login = owner.login
-                newOwner.reposUrl = owner.reposUrl
-                newOwner.url = owner.url
-                newOwner.repository = repository
-                
-                return newOwner
+        if let ownerEntity = NSEntityDescription.entity(forEntityName: "OwnerEntity", in: context) {
+            let newOwner = OwnerEntity(entity: ownerEntity, insertInto: context)
+            
+            newOwner.avatarUrl = owner.avatarUrl
+            newOwner.followersUrl = owner.followersUrl
+            newOwner.followingUrl = owner.followingUrl
+            newOwner.htmlUrl = owner.htmlUrl
+            if let id = owner.id {
+                newOwner.id = Int32(id)
+            }
+            newOwner.login = owner.login
+            newOwner.reposUrl = owner.reposUrl
+            newOwner.url = owner.url
+            newOwner.repository = repository
+            
+            return newOwner
         }
         return nil
     }

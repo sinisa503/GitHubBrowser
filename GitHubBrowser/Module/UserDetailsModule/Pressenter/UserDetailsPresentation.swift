@@ -9,19 +9,19 @@
 import UIKit
 
 protocol UserDetailsPresentation:class {
-   
-   func viewDidLoad()
-   func viewWillAppear(animated: Bool)
-   func viewDidAppear(animated: Bool)
-   func viewWillDisappear(animated: Bool)
-   func viewDidDisappear(animated: Bool)
-   
-   var user:User? { get set }
-   
-   //Interactor
-   func downloadUserImage(from url:String, completion:@escaping (UIImage)->())
-   
-   //Router
-   func goToWeb(url: URL)
-   func sendEmail(to address:String)
+    
+    func viewDidLoad()
+    func viewWillAppear(animated: Bool)
+    func viewDidAppear(animated: Bool)
+    func viewWillDisappear(animated: Bool)
+    func viewDidDisappear(animated: Bool)
+    
+    var user:User? { get set }
+    
+    //Interactor
+    func downloadUserImage(from url:String, completion:@escaping (UIImage)->())
+    
+    //Router
+    func goToWeb(url: URL)
+    func sendEmail(to address:String)
 }

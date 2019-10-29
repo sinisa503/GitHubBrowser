@@ -9,20 +9,20 @@
 import Foundation
 
 protocol RepositoryPresentation {
-   
-   func viewDidLoad()
-   func viewWillAppear(animated: Bool)
-   func viewDidAppear(animated: Bool)
-   func viewWillDisappear(animated: Bool)
-   func viewDidDisappear(animated: Bool)
-   
-   var ownerInfo:User? { get set }
-   var repository:Repository? { get set }
-   
-   //Interactor
-   func downloadUserInfo(username:String,completion:@escaping UserCompletion)
-   
-   //Router
-   func goToWeb(url: URL)
-   func goToUserDetails(user:User)
+    
+    func viewDidLoad()
+    func viewWillAppear(animated: Bool)
+    func viewDidAppear(animated: Bool)
+    func viewWillDisappear(animated: Bool)
+    func viewDidDisappear(animated: Bool)
+    
+    var ownerInfo:User? { get set }
+    var repository:Repository? { get set }
+    
+    //Interactor
+    func downloadUserInfo(username:String,completion:@escaping UserCompletion)
+    
+    //Router
+    func goToWeb(url: URL)
+    func goToUserDetails(user:User)
 }

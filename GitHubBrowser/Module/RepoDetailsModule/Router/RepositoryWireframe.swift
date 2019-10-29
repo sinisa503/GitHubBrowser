@@ -9,7 +9,7 @@
 import Foundation
 
 protocol RepositoryWireframe {
-   
-   func goToWeb(url: URL)
-   func goToUserDetails(user:User)
+    
+    func goToWeb(url: URL)
+    func goToUserDetails(user:User)
 }
