@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <FileRef
+      location = "group:OwnerEntity+CoreDataClass.swift">
+   </FileRef>
+   <FileRef
+      location = "group:OwnerEntity+CoreDataProperties.swift">
+   </FileRef>
+   <FileRef
+      location = "group:RepositoryEntity+CoreDataClass.swift">
+   </FileRef>
+   <FileRef
+      location = "group:RepositoryEntity+CoreDataProperties.swift">
+   </FileRef>
+   <FileRef
+      location = "group:GitHubBrowser.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Pods/Pods.xcodeproj">
+   </FileRef>
+</Workspace>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="15400" systemVersion="19A583" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="OwnerEntity" representedClassName="OwnerEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="avatarUrl" optional="YES" attributeType="String"/>
+        <attribute name="followersUrl" optional="YES" attributeType="String"/>
+        <attribute name="followingUrl" optional="YES" attributeType="String"/>
+        <attribute name="htmlUrl" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="login" optional="YES" attributeType="String"/>
+        <attribute name="reposUrl" optional="YES" attributeType="String"/>
+        <attribute name="url" optional="YES" attributeType="String"/>
+        <relationship name="repository" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="RepositoryEntity"/>
+    </entity>
+    <entity name="RepositoryEntity" representedClassName="RepositoryEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="createdAt" optional="YES" attributeType="String"/>
+        <attribute name="desc" optional="YES" attributeType="String"/>
+        <attribute name="forks" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="forksCount" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="gitUrl" optional="YES" attributeType="String"/>
+        <attribute name="htmlUrl" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="isPrivate" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="issuesCount" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="language" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="openIssues" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="pushedAt" optional="YES" attributeType="String"/>
+        <attribute name="size" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="subscribersUrl" optional="YES" attributeType="String"/>
+        <attribute name="updatedAt" optional="YES" attributeType="String"/>
+        <attribute name="watchersCount" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="owner" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="OwnerEntity"/>
+    </entity>
+    <elements>
+        <element name="OwnerEntity" positionX="91.88671875" positionY="48.6953125" width="128" height="178"/>
+        <element name="RepositoryEntity" positionX="-209.5078125" positionY="109.61328125" width="128" height="313"/>
+    </elements>
+</model>
