@@ -12,9 +12,11 @@ class RepositoryInteractor: RepositoryUseCase {
    
    var presenter: RepositoryPresentation?
    
-  func downloadUserInfo(username:String,completion:@escaping UserCompletion) {
-//    GitHubService.getGitHubUser(username: username) { (user, error) in
-//      completion(user,error)
-//    }
-  }
+    func downloadUserInfo(username:String,completion:@escaping UserCompletion) {
+        GitHubService.getGitHubUser(username: username).subscribe(onNext: { user in
+            completion(user, nil)
+        }, onError: { error in
+            completion(nil, error)
+        }).dispose()
+    }
 }
