@@ -1,45 +1,39 @@
 PODS:
-  - Alamofire (4.7.3)
-  - AlamofireImage (3.3.1):
-    - Alamofire (~> 4.5)
+  - Alamofire (4.9.0)
+  - AlamofireImage (3.6.0):
+    - Alamofire (~> 4.9)
   - Keychain (0.3.1)
-  - PromiseKit/Alamofire (6.3.4):
-    - Alamofire (~> 4.0)
-    - PromiseKit/CorePromise
-  - PromiseKit/CorePromise (6.3.4)
-  - RxCocoa (4.2.0):
-    - RxSwift (~> 4.0)
-  - RxSwift (4.2.0)
-  - SwiftyJSON (4.1.0)
+  - RxCocoa (5.0.1):
+    - RxRelay (~> 5)
+    - RxSwift (~> 5)
+  - RxRelay (5.0.1):
+    - RxSwift (~> 5)
+  - RxSwift (5.0.1)
 
 DEPENDENCIES:
   - Alamofire
   - AlamofireImage
   - Keychain
-  - PromiseKit/Alamofire
   - RxCocoa
   - RxSwift
-  - SwiftyJSON
 
 SPEC REPOS:
-  https://github.com/CocoaPods/Specs.git:
+  trunk:
     - Alamofire
     - AlamofireImage
     - Keychain
-    - PromiseKit
     - RxCocoa
+    - RxRelay
     - RxSwift
-    - SwiftyJSON
 
 SPEC CHECKSUMS:
-  Alamofire: c7287b6e5d7da964a70935e5db17046b7fde6568
-  AlamofireImage: 3b35b586853abaf94ca1250f4e94cff3c21a4c0d
+  Alamofire: afc3e7c6db61476cb45cdd23fed06bad03bbc321
+  AlamofireImage: be9963c6582d68b39e89191f64c82a7d7bf40fdd
   Keychain: ef812eafcf6593fe4409b07cfecc00b95fb373ed
-  PromiseKit: e1425568123ec844a944c93f2bcb29d511d39cf5
-  RxCocoa: 0b54909c902e1e581212a03e690bbd94032d8baa
-  RxSwift: 99e10317ddfcc7fbe01356aafd118fde4a0be104
-  SwiftyJSON: c29297daf073d2aa016295d5809cdd68045c39b3
+  RxCocoa: e741b9749968e8a143e2b787f1dfbff2b63d0a5c
+  RxRelay: 89d54507f4fd4d969e6ec1d4bd7f3673640b4640
+  RxSwift: e2dc62b366a3adf6a0be44ba9f405efd4c94e0c4
 
-PODFILE CHECKSUM: b908d77ca428ad6a90ca25d74ec4da601412f384
+PODFILE CHECKSUM: b0a831c2d1a5be4da6370e90494dabb4820237dd
 
 COCOAPODS: 1.8.4

@@ -13,15 +13,20 @@ class UserDetailsRouter: UserDetailsWireframe {
     
     func goToWeb(url: URL) {
         if UIApplication.shared.canOpenURL(url) {
-            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+            UIApplication.shared.open(url, options: convertToUIApplicationOpenExternalURLOptionsKeyDictionary([:]), completionHandler: nil)
         }
     }
     
     func sendEmail(to address: String) {
         if let emailUrl = URL(string: "\(Constant.EMAIL_PREFIX)\(address)") {
             if UIApplication.shared.canOpenURL(emailUrl) {
-                UIApplication.shared.open(emailUrl, options: [:], completionHandler: nil)
+                UIApplication.shared.open(emailUrl, options: convertToUIApplicationOpenExternalURLOptionsKeyDictionary([:]), completionHandler: nil)
             }
         }
     }
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertToUIApplicationOpenExternalURLOptionsKeyDictionary(_ input: [String: Any]) -> [UIApplication.OpenExternalURLOptionsKey: Any] {
+	return Dictionary(uniqueKeysWithValues: input.map { key, value in (UIApplication.OpenExternalURLOptionsKey(rawValue: key), value)})
 }

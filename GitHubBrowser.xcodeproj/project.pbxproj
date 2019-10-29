@@ -505,7 +505,7 @@
 				02AFA0912104899F00634099 /* Sources */,
 				02AFA0922104899F00634099 /* Frameworks */,
 				02AFA0932104899F00634099 /* Resources */,
-				760082C1F2A96014D6935040 /* [CP] Embed Pods Frameworks */,
+				98751FA252B894C1E7059CFB /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -566,13 +566,16 @@
 				TargetAttributes = {
 					02AFA0942104899F00634099 = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 1110;
 					};
 					02AFA0AB210489A000634099 = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 1110;
 						TestTargetID = 02AFA0942104899F00634099;
 					};
 					02AFA0B6210489A000634099 = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 1110;
 						TestTargetID = 02AFA0942104899F00634099;
 					};
 				};
@@ -631,23 +634,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		760082C1F2A96014D6935040 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-GitHubBrowser/Pods-GitHubBrowser-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-GitHubBrowser/Pods-GitHubBrowser-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GitHubBrowser/Pods-GitHubBrowser-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		81408F75389C60DB539B500E /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -700,6 +686,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		98751FA252B894C1E7059CFB /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GitHubBrowser/Pods-GitHubBrowser-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GitHubBrowser/Pods-GitHubBrowser-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GitHubBrowser/Pods-GitHubBrowser-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -939,7 +942,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.sinisa.github.browser.app.GitHubBrowser;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -959,7 +962,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.sinisa.github.browser.app.GitHubBrowser;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -980,7 +983,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.sinisa.github.browser.app.GitHubBrowserTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GitHubBrowser.app/GitHubBrowser";
 			};
@@ -1002,7 +1005,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.sinisa.github.browser.app.GitHubBrowserTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GitHubBrowser.app/GitHubBrowser";
 			};
@@ -1023,7 +1026,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.sinisa.github.browser.app.GitHubBrowserUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = GitHubBrowser;
 			};
@@ -1044,7 +1047,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.sinisa.github.browser.app.GitHubBrowserUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = GitHubBrowser;
 			};

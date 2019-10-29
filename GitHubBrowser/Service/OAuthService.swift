@@ -62,7 +62,7 @@ class OAuthService {
         components?.queryItems = [clientIdQuery, scopeQuery, stateQuery]
         
         guard let authURL:URL = components?.url else { return }
-        UIApplication.shared.open(authURL, options: [:], completionHandler: nil)
+        UIApplication.shared.open(authURL, options: convertToUIApplicationOpenExternalURLOptionsKeyDictionary([:]), completionHandler: nil)
     }
     
     
@@ -100,9 +100,14 @@ class OAuthService {
     private static func extractAndSaveAuthCode(response:String) {
         let array = response.split { $0 == Constant.EQUALS }
         let str = String(array[1])
-        if let index = str.index(of: Constant.AMPERSAND) {
+        if let index = str.firstIndex(of: Constant.AMPERSAND) {
             let accessToken = String(str.prefix(upTo: index))
             OAuthToken = accessToken
         }
     }
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertToUIApplicationOpenExternalURLOptionsKeyDictionary(_ input: [String: Any]) -> [UIApplication.OpenExternalURLOptionsKey: Any] {
+	return Dictionary(uniqueKeysWithValues: input.map { key, value in (UIApplication.OpenExternalURLOptionsKey(rawValue: key), value)})
 }

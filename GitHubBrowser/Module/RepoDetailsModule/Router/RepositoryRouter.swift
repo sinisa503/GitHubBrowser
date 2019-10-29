@@ -14,7 +14,7 @@ class RepositoryRouter: RepositoryWireframe {
     
     func goToWeb(url: URL) {
         if UIApplication.shared.canOpenURL(url) {
-            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+            UIApplication.shared.open(url, options: convertToUIApplicationOpenExternalURLOptionsKeyDictionary([:]), completionHandler: nil)
         }
     }
     
@@ -24,4 +24,9 @@ class RepositoryRouter: RepositoryWireframe {
             view?.navigationController?.show(userDetailsVC, sender: nil)
         }
     }
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertToUIApplicationOpenExternalURLOptionsKeyDictionary(_ input: [String: Any]) -> [UIApplication.OpenExternalURLOptionsKey: Any] {
+	return Dictionary(uniqueKeysWithValues: input.map { key, value in (UIApplication.OpenExternalURLOptionsKey(rawValue: key), value)})
 }
